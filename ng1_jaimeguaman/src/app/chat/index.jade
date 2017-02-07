@@ -1,0 +1,10 @@
+.chat
+  form
+    input(ng-model="vm.model.message", type="text", placeholder="Mensaje...")
+    button#btn-enviar(ng-click="vm.send(vm.model.message)") Enviar
+.output
+  article.message(ng-repeat="message in vm.messages | orderBy:'timestamp':true")
+    .author
+      p.author__name {{message.author.name}}
+      p.author__date(am-time-ago="message.timestamp")
+    .message__body {{message.text}}

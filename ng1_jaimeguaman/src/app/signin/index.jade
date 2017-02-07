@@ -1,0 +1,4 @@
+.login
+    input(name="user" type='text', ng-model='vm.model.username', placeholder='Nickname')
+.login
+  button(ng-click="vm.signin(vm.model, room)", ng-repeat="room in vm.rooms") {{room}}

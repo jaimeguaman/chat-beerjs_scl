@@ -1,0 +1,8 @@
+{
+  "local": {
+    "ENV": "local",
+    "FIREBASE_KEY": "AIzaSyCL7buZsLVXXQ3Wp7buGEUdlU2qhAPpVwY",
+    "FIREBASE_AUTH_DOMAIN": "beer-js.firebaseio.com",
+    "FIREBASE_DATABASE_URL": "https://beer-js.firebaseio.com/"
+  }
+}

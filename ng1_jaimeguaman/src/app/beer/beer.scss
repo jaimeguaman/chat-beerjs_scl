@@ -1,0 +1,213 @@
+@import "http://fonts.googleapis.com/css?family=Noto+Sans";
+
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font: 16px/20px 'Noto Sans', sans-serif;
+  background: -webkit-linear-gradient(-45deg, #183850 0, #183850 25%, #192C46 50%, #22254C 75%, #22254C 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: #fff;
+}
+
+.wrapper {
+  width: 70%;
+  margin: 2em auto;
+}
+
+header {
+  border-bottom-color: #eee;
+}
+
+h1, h2, h3 {
+  margin: 0;
+  text-rendering: optimizeLegibility;
+}
+
+h1 {
+  font-size: 2em;
+  line-height: 1.6em;
+  text-align: center;
+  font-weight: normal;
+}
+
+h2 {
+  font-size: 1em;
+  line-height: 1.4em;
+  text-align: center;
+  font-weight: 300;
+}
+
+input {
+  &[type=text], &[type=password] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    color: #333;
+    font-size: 1em;
+    padding: .7em 1em;
+    margin-bottom: 1em;
+    position: relative;
+    top: 15px;
+    border: 0;
+  }
+}
+
+button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  color: #333;
+  font-size: 1em;
+  padding: .7em 1em;
+  margin-bottom: 1em;
+  position: relative;
+  top: 15px;
+  border: 0;
+  &:not(:last-child){
+    margin-right: 10px;
+  }
+}
+
+input {
+  &[type=text], &[type=password] {
+    width: calc(100% - 125px);
+    font-family: 'Noto Sans', sans-serif;
+    background: none;
+    color: #0AD5C1;
+    outline: 0;
+    border-bottom: 2px solid rgba(25, 147, 147, 0.2);
+  }
+}
+
+button {
+  background: #0AD5C1;
+  margin: .5em 0 2em 0;
+  width: 120px;
+  color: #fff;
+  cursor: pointer;
+}
+
+#btn-login {
+  display: block;
+  margin-right: 140px;
+  float: right;
+}
+
+#main {
+  margin: 2em 1em 1em;
+
+  > h2 {
+    font-weight: normal;
+    font-size: 1.2em;
+    margin-bottom: 1.5em;
+  }
+}
+
+.login {
+  clear: both;
+}
+
+.chat {
+  height: 85px;
+  position: relative;
+  clear: both;
+
+  i {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    font-size: 75px;
+  }
+}
+
+.output {
+  max-height: 500px;
+  overflow-y: auto;
+
+  i {
+    position: absolute;
+    top: -5px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    font-size: 40px;
+
+    + span {
+      position: relative;
+      clear: both;
+      display: inline-block;
+      margin-left: 60px;
+      padding: 16px 40px 16px 20px;
+      border-radius: 10px;
+      color: #0EC879;
+      background-color: rgba(25, 147, 147, 0.2);
+
+      &:after {
+        position: absolute;
+        top: 15px;
+        content: '';
+        width: 0;
+        height: 0;
+        border-top: 15px solid rgba(25, 147, 147, 0.2);
+        border-left: 15px solid transparent;
+        left: -15px;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .wrapper {
+    width: 90%;
+  }
+
+  h1 {
+    font-size: 1.2em;
+  }
+
+  h2 {
+    font-size: .8em;
+  }
+}
+
+.avatar {
+  border-radius: 50px;
+  height: 50px;
+  margin-right: 25px;
+  width: 50px;
+}
+
+@include block('author'){
+  font-size: 16px;
+  position: relative;
+  margin-bottom: 10px;
+  @include element('name'){
+    color: white;
+    margin: 0;
+  }
+  @include element('date'){
+    color: white;
+    position: absolute;
+    margin: 0;
+    top: 0;
+    right: 0;
+  }
+}
+
+
+@include block('message'){
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 20px;
+  color: #0EC879;
+  background-color: rgba(25, 147, 147, 0.2);
+  margin-bottom: 10px;
+}
